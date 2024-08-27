@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv3g155x8jd44"]
+
+[ext_resource type="Script" path="res://scenes/action_picker.gd" id="1_kexd8"]
+[ext_resource type="Script" path="res://scenes/enemies/crab/crab_attack_action.gd" id="2_c6y8j"]
+[ext_resource type="Script" path="res://scenes/enemies/crab/crab_double_attack_action.gd" id="3_7pcjr"]
+
+[node name="CrabEnemyAI" type="Node"]
+script = ExtResource("1_kexd8")
+opposite_team_group_name = "player_team"
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_c6y8j")
+type = 1
+
+[node name="AttackAndBlockAction" type="Node" parent="."]
+script = ExtResource("3_7pcjr")

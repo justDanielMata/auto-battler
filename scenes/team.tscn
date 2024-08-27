@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyl55nu72h7tk"]
+
+[ext_resource type="Script" path="res://scenes/Team.gd" id="1_duy84"]
+
+[node name="Team" type="Node"]
+script = ExtResource("1_duy84")
+
+[connection signal="child_order_changed" from="." to="." method="_on_child_order_changed"]

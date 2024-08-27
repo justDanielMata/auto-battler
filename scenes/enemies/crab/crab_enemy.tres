@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=4 format=3 uid="uid://dm4km2hqsyt75"]
+
+[ext_resource type="PackedScene" uid="uid://bv3g155x8jd44" path="res://scenes/enemies/crab/crab_enemy_ai.tscn" id="1_pgeca"]
+[ext_resource type="Texture2D" uid="uid://8hi0wj7po386" path="res://art/tile_0110.png" id="2_gyb0g"]
+[ext_resource type="Script" path="res://custom_resources/stats.gd" id="3_kxkc7"]
+
+[resource]
+script = ExtResource("3_kxkc7")
+hit_chance_weight = 1.0
+max_health = 10
+max_mana = 3
+initial_mana = 0
+mana_gain = 1
+art = ExtResource("2_gyb0g")
+agility = 1
+ai = ExtResource("1_pgeca")

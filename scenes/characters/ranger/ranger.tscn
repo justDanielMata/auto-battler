@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf5ah7jlwab20"]
+
+[ext_resource type="Script" path="res://scenes/battle_character_2d.gd" id="1_8u8bv"]
+[ext_resource type="Resource" uid="uid://bge8ac1cwotte" path="res://scenes/characters/ranger/ranger_stats.tres" id="2_vqgcb"]
+[ext_resource type="Texture2D" uid="uid://cpqaoi2ork6dx" path="res://art/tile_0112.png" id="3_t3pqg"]
+[ext_resource type="Texture2D" uid="uid://dstwip5uxj52s" path="res://art/tile_0118.png" id="4_jgwn3"]
+[ext_resource type="PackedScene" uid="uid://c3hfpfvsxgoj7" path="res://scenes/ui/stats_ui.tscn" id="5_2ryp7"]
+
+[node name="Ranger" type="CharacterBody2D"]
+script = ExtResource("1_8u8bv")
+stats = ExtResource("2_vqgcb")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("3_t3pqg")
+
+[node name="Weapon" type="Sprite2D" parent="."]
+position = Vector2(8, 4)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_jgwn3")
+
+[node name="StatsUI" parent="." instance=ExtResource("5_2ryp7")]
+offset_top = 5.0
+offset_bottom = 21.0

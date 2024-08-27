@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://bge8ac1cwotte"]
+
+[ext_resource type="Script" path="res://custom_resources/stats.gd" id="1_ikii6"]
+
+[resource]
+script = ExtResource("1_ikii6")
+hit_chance_weight = 0.5
+max_health = 10
+max_mana = 5
+initial_mana = 0
+mana_gain = 1

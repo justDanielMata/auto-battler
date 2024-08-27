@@ -1,0 +1,1 @@
+class_name AllyCharacter2D extends BattleCharacter2D

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://cukwto680h34x"]
+
+[ext_resource type="Script" path="res://custom_resources/stats.gd" id="1_mdjel"]
+[ext_resource type="PackedScene" uid="uid://dfbrvjufioqda" path="res://scenes/characters/warrior/warrior_ai.tscn" id="1_t7huq"]
+
+[resource]
+script = ExtResource("1_mdjel")
+hit_chance_weight = 2.0
+max_health = 15
+max_mana = 5
+initial_mana = 5
+mana_gain = 1
+agility = 2
+ai = ExtResource("1_t7huq")

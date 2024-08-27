@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcvqyp2ar4ieb"]
+
+[ext_resource type="Texture2D" uid="uid://8hi0wj7po386" path="res://art/tile_0110.png" id="1_1e0c6"]
+[ext_resource type="Script" path="res://scenes/enemies/enemy.gd" id="1_ju1a5"]
+[ext_resource type="PackedScene" uid="uid://c3hfpfvsxgoj7" path="res://scenes/ui/stats_ui.tscn" id="2_88eb1"]
+[ext_resource type="PackedScene" uid="uid://crcwl3poa068s" path="res://scenes/ui/mana_ui.tscn" id="4_qij8q"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_ju1a5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1e0c6")
+
+[node name="StatsUI" parent="." instance=ExtResource("2_88eb1")]
+offset_top = 7.0
+offset_bottom = 23.0
+
+[node name="ManaUI" parent="." instance=ExtResource("4_qij8q")]
+offset_left = -21.0
+offset_top = -32.0
+offset_right = 19.0
+offset_bottom = 8.0

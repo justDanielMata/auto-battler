@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfbrvjufioqda"]
+
+[ext_resource type="Script" path="res://scenes/action_picker.gd" id="1_tdup8"]
+[ext_resource type="Script" path="res://scenes/characters/warrior/warrior_attack_action.gd" id="2_cfv4e"]
+[ext_resource type="Script" path="res://scenes/characters/warrior/DoubleAttackAction.gd" id="3_l0g1j"]
+
+[node name="WarriorAi" type="Node"]
+script = ExtResource("1_tdup8")
+opposite_team_group_name = "enemy_team"
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_cfv4e")
+type = 1
+
+[node name="DoubleAttackAction" type="Node" parent="."]
+script = ExtResource("3_l0g1j")

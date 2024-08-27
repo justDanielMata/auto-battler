@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://688os1gnaunh"]
+
+[ext_resource type="Script" path="res://scenes/battle_character_2d.gd" id="1_v1q5x"]
+[ext_resource type="Resource" uid="uid://bgdpimm2w704n" path="res://scenes/characters/mage/mage_stats.tres" id="2_2wf0v"]
+[ext_resource type="Texture2D" uid="uid://bmupoa6ekmd7q" path="res://art/tile_0084.png" id="2_nqhl8"]
+[ext_resource type="Texture2D" uid="uid://dy7kyi55hpbrv" path="res://art/tile_0130.png" id="3_1hli4"]
+[ext_resource type="PackedScene" uid="uid://c3hfpfvsxgoj7" path="res://scenes/ui/stats_ui.tscn" id="4_qqtay"]
+
+[node name="Mage" type="CharacterBody2D"]
+script = ExtResource("1_v1q5x")
+stats = ExtResource("2_2wf0v")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("2_nqhl8")
+
+[node name="Weapon" type="Sprite2D" parent="."]
+position = Vector2(6, 3)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_1hli4")
+
+[node name="StatsUI" parent="." instance=ExtResource("4_qqtay")]
+offset_left = -47.0
+offset_top = 4.0
+offset_right = 43.0
+offset_bottom = 20.0

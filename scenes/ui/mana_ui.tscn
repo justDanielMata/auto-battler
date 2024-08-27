@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://crcwl3poa068s"]
+
+[ext_resource type="Texture2D" uid="uid://byvpx1vs7p7f4" path="res://art/mana.png" id="1_i586u"]
+[ext_resource type="Theme" uid="uid://dhp4mlsemsih8" path="res://custom_resources/main_theme.tres" id="1_k7oyj"]
+[ext_resource type="Script" path="res://scenes/ui/mana_ui.gd" id="2_chffq"]
+
+[node name="ManaUI" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_k7oyj")
+alignment = 1
+script = ExtResource("2_chffq")
+
+[node name="Mana" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="ManaIcon" type="TextureRect" parent="Mana"]
+layout_mode = 2
+texture = ExtResource("1_i586u")
+stretch_mode = 5
+
+[node name="ManaLabel" type="Label" parent="Mana"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+text = "6/6"
+horizontal_alignment = 1
+vertical_alignment = 1
