@@ -3,12 +3,15 @@ class_name ActionPicker extends Node
 @export var opposite_team_group_name: String
 @export var character: BattleCharacter2D : set = _set_character
 @export var target: BattleCharacter2D : set = _set_target
+var team_handler: Team
 
 func _ready() -> void:
-	var team_handler: Team = get_tree().get_first_node_in_group(opposite_team_group_name) as Team
+	Events.character_died.connect(_check_if_target_dead)
+	team_handler = get_tree().get_first_node_in_group(opposite_team_group_name) as Team
 	target = team_handler.get_target()
 
 func get_action() -> Action:
+	target = team_handler.get_target()
 	var action:= get_first_conditional_action()
 	if action:
 		return action
@@ -44,4 +47,8 @@ func _set_target(value: BattleCharacter2D) -> void:
 	target = value
 	for action in get_children():
 		action.target = target
+
+func _check_if_target_dead(character: BattleCharacter2D) -> void:
+	if target == character:
+		target = team_handler.get_target()
 

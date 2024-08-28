@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://bgdpimm2w704n"]
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://bgdpimm2w704n"]
 
 [ext_resource type="Script" path="res://custom_resources/stats.gd" id="1_ftekw"]
+[ext_resource type="PackedScene" uid="uid://b0lkolu5li8e8" path="res://scenes/characters/mage/mage_ai.tscn" id="1_t2gd1"]
 
 [resource]
 script = ExtResource("1_ftekw")
 hit_chance_weight = 1.0
-max_health = 12
+max_health = 15
 max_mana = 5
 initial_mana = 1
 mana_gain = 2
 agility = 1
+ai = ExtResource("1_t2gd1")

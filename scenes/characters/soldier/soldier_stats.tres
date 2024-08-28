@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=3 format=3 uid="uid://ci2gd115avvfl"]
+
+[ext_resource type="PackedScene" uid="uid://6p8fy647carp" path="res://scenes/characters/soldier/soldier_ai.tscn" id="1_8vf4t"]
+[ext_resource type="Script" path="res://custom_resources/stats.gd" id="1_hqb75"]
+
+[resource]
+script = ExtResource("1_hqb75")
+hit_chance_weight = 1.0
+max_health = 15
+max_mana = 6
+initial_mana = 0
+mana_gain = 1
+agility = 1
+ai = ExtResource("1_8vf4t")

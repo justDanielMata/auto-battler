@@ -24,5 +24,14 @@ func get_target() -> BattleCharacter2D:
 
 	return null
 
+func check_for_battle_result():
+	if is_in_group("enemy_team"):
+		if get_child_count() == 0:
+			print('Victory')
+	else: # then its the player team
+		if get_child_count() == 0:
+			print('defeat')
+
 func _on_child_order_changed():
 	setup_chances()
+	check_for_battle_result()

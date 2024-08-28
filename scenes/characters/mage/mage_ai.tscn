@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0lkolu5li8e8"]
+
+[ext_resource type="Script" path="res://scenes/action_picker.gd" id="1_06njj"]
+[ext_resource type="Script" path="res://scenes/characters/mage/attack_action.gd" id="2_h01qb"]
+[ext_resource type="Script" path="res://scenes/characters/mage/DoubleAttackAction.gd" id="3_frd7l"]
+
+[node name="MageAi" type="Node"]
+script = ExtResource("1_06njj")
+opposite_team_group_name = "enemy_team"
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_h01qb")
+type = 1
+
+[node name="UltimateAction" type="Node" parent="."]
+script = ExtResource("3_frd7l")

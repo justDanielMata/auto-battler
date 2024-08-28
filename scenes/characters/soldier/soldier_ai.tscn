@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://6p8fy647carp"]
+
+[ext_resource type="Script" path="res://scenes/action_picker.gd" id="1_2uo4g"]
+[ext_resource type="Script" path="res://scenes/characters/soldier/soldier_attack_action.gd" id="2_rggtk"]
+[ext_resource type="Script" path="res://scenes/characters/soldier/soldier_ultimate.gd" id="3_40pq6"]
+
+[node name="SoldierAI" type="Node"]
+script = ExtResource("1_2uo4g")
+opposite_team_group_name = "enemy_team"
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_rggtk")
+type = 1
+
+[node name="UltimateAction" type="Node" parent="."]
+script = ExtResource("3_40pq6")

@@ -3,6 +3,8 @@ class_name BattleCharacter2D extends CharacterBody2D
 @export  var stats : Stats : set = set_character_stats
 @onready var stats_ui = $StatsUI
 @onready var mana_ui = $ManaUI
+@export var projectile: Texture
+@export var ultimate_projectile: Texture
 
 var action_picker: ActionPicker
 var current_action: Action : set = set_current_action
@@ -62,7 +64,9 @@ func take_damage(damage: int) -> void:
 		return
 	
 	stats.take_damage(damage)
+	stats.gain_mana()
 	
 	if stats.health <= 0:
 		queue_free()
+		Events.character_died.emit(self)
 

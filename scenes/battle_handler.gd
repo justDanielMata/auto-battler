@@ -3,7 +3,8 @@ class_name BattleHandler extends Node2D
 var turn_order: Array[BattleCharacter2D]
 func _ready() -> void:
 	Events.action_completed.connect(_on_character_action_completed)
-	
+	Events.character_died.connect(_on_character_death)
+
 func reset_actions() -> void:
 	var current_character: BattleCharacter2D
 	for child in get_children():
@@ -21,9 +22,10 @@ func start_turn() -> void:
 			if not character is BattleCharacter2D:
 				continue
 			turn_order.append(character)
+	turn_order.shuffle()
 	turn_order.sort_custom(
 		func(a,b):
-			if a.stats.agility <= b.stats.agility:
+			if a.stats.agility >=  b.stats.agility:
 				return true
 			else:
 				return false
@@ -42,3 +44,7 @@ func _on_character_action_completed(character: BattleCharacter2D) -> void:
 		return
 	var next_character: BattleCharacter2D = turn_order[character_index + 1] as BattleCharacter2D
 	next_character.do_turn()
+
+func _on_character_death(character: BattleCharacter2D) -> void:
+	var index_to_remove = turn_order.find(character)
+	turn_order.remove_at(index_to_remove)

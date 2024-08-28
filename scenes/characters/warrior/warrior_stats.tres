@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("1_mdjel")
 hit_chance_weight = 2.0
-max_health = 15
+max_health = 20
 max_mana = 5
-initial_mana = 5
+initial_mana = 0
 mana_gain = 1
 agility = 2
 ai = ExtResource("1_t7huq")

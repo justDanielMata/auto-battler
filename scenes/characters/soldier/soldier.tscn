@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://blc51o0ruur31"]
+
+[ext_resource type="Script" path="res://scenes/battle_character_2d.gd" id="1_431dm"]
+[ext_resource type="Texture2D" uid="uid://bcfr2r0njovd7" path="res://art/tile_0100.png" id="2_xfdk0"]
+[ext_resource type="Texture2D" uid="uid://b00drsoe3txwn" path="res://art/tile_0131.png" id="3_nat1p"]
+[ext_resource type="PackedScene" uid="uid://crcwl3poa068s" path="res://scenes/ui/mana_ui.tscn" id="4_wpvpd"]
+[ext_resource type="PackedScene" uid="uid://c3hfpfvsxgoj7" path="res://scenes/ui/stats_ui.tscn" id="5_073qh"]
+
+[node name="Soldier" type="CharacterBody2D"]
+script = ExtResource("1_431dm")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("2_xfdk0")
+
+[node name="Weapon" type="Sprite2D" parent="."]
+position = Vector2(-7, 1)
+rotation = -0.245796
+texture = ExtResource("3_nat1p")
+
+[node name="ManaUI" parent="." instance=ExtResource("4_wpvpd")]
+offset_left = -15.0
+offset_top = -20.0
+offset_right = 10.0
+offset_bottom = -4.0
+
+[node name="StatsUI" parent="." instance=ExtResource("5_073qh")]
+offset_left = -46.0
+offset_top = 5.0
+offset_right = 44.0
+offset_bottom = 21.0
